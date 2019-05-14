@@ -1,6 +1,6 @@
-{% set version = "0.6.3" %}
+{% set version = "0.6.4" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "6acbae96a36a20107332cf1177d5aa8ebbc989ae3bd4d71cc8d46aff3df2dd7b" %}
+{% set hash_value = "a2aa0ade95e6eac8589dea6ebc8368fa7c89dd41774df4be660d52c0621c8507" %}
 
 package:
   name: 'crystals'
@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
