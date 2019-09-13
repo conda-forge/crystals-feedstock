@@ -1,6 +1,6 @@
-{% set version = "0.6.4" %}
+{% set version = "0.6.5" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "a2aa0ade95e6eac8589dea6ebc8368fa7c89dd41774df4be660d52c0621c8507" %}
+{% set hash_value = "12435b9b65a7e92018af0e496619d86265aade61c3cc3e246b031f0f846caf3b" %}
 
 package:
   name: 'crystals'
