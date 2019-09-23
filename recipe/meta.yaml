@@ -22,9 +22,9 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - numpy >=1.13
-    - spglib >=1.11
-    - pycifrw >=4.4
+    - numpy >=1.13, <2
+    - spglib >=1.14, <2
+    - pycifrw >=4.4.1, <5
 
 test:
   imports:
