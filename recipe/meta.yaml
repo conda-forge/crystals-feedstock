@@ -1,6 +1,6 @@
-{% set version = "0.6.6" %}
+{% set version = "0.6.7" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "a3d7d6c1dabd5142956bb46b90ec3a36cba89ae137703d1509b46edeea84f2c8" %}
+{% set hash_value = "3dcaa7e94633e0486cb2bb3bc0bbcfdcd359afbe61a38be5a38e8b241e27709e" %}
 
 package:
   name: 'crystals'
@@ -25,6 +25,7 @@ requirements:
     - numpy >=1.13, <2
     - spglib >=1.14, <2
     - pycifrw >=4.4.1, <5
+    - requests >=2, <3
 
 test:
   imports:
