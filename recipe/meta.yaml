@@ -1,20 +1,18 @@
-{% set version = "0.6.7" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "3dcaa7e94633e0486cb2bb3bc0bbcfdcd359afbe61a38be5a38e8b241e27709e" %}
+{% set version = "1.0.0" %}
 
 package:
-  name: 'crystals'
-  version: '{{ version }}'
+  name: crystals
+  version: {{ version }}
 
 source:
-  fn: 'crystals-{{ version }}.tar.gz'
+  fn: crystals-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/c/crystals/crystals-{{ version }}.tar.gz
-  '{{ hash_type }}': '{{ hash_value }}'
+  sha256: a0c328b7d9bfce7a69bf3e60d7e8ee945369c5890b081facb454c474b2e5a895
 
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -35,14 +33,14 @@ about:
   home: https://crystals.readthedocs.io
   license: BSD 3-Clause
   license_family: BSD
-  license_file: 'LICENSE'
+  license_file: LICENSE
   summary: Data structures for crystallography
   description: |
     crystals provides data structure to manipulate crystal structures, including parsing 
     crystal files, determining symmetries, and accessing atomic information.
-  doc_url: 'https://crystals.readthedocs.io/'
-  dev_url: 'https://github.com/LaurentRDC/crystals'
+  doc_url: https://crystals.readthedocs.io/
+  dev_url: https://github.com/LaurentRDC/crystals
 
 extra:
-  recipe-maintainers: 
+  recipe-maintainers:
     - LaurentRDC
