@@ -5,9 +5,13 @@ Home: https://crystals.readthedocs.io
 
 Package license: BSD 3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/crystals-feedstock/blob/master/LICENSE.txt)
 
 Summary: Data structures for crystallography
+
+Development: https://github.com/LaurentRDC/crystals
+
+Documentation: https://crystals.readthedocs.io/
 
 crystals provides data structure to manipulate crystal structures, including parsing
 crystal files, determining symmetries, and accessing atomic information.
