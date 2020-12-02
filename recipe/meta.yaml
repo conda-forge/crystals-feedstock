@@ -28,6 +28,8 @@ requirements:
 test:
   imports:
     - crystals
+  commands:
+    - python -m unittest discover --buffer
 
 about:
   home: https://crystals.readthedocs.io
