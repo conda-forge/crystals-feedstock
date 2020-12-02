@@ -1,4 +1,4 @@
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: crystals
@@ -7,7 +7,7 @@ package:
 source:
   fn: crystals-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/c/crystals/crystals-{{ version }}.tar.gz
-  sha256: dceca402b230362f5de36b97d2e1ae026f38c6b28e6f62412610e0288a7dbd79
+  sha256: b7f512c96505b250d2b0299b81b0a877f2474ca0a89f5562aaf37ffbd890f7ad
 
 build:
   noarch: python
@@ -28,6 +28,8 @@ requirements:
 test:
   imports:
     - crystals
+  commands:
+    - python -m unittest discover --buffer
 
 about:
   home: https://crystals.readthedocs.io
