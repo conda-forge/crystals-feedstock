@@ -11,7 +11,9 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
+  entry_points:
+    - crystals = crystals.__main__:main
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -29,6 +31,7 @@ test:
   imports:
     - crystals
   commands:
+    - crystals --help
     - python -m unittest discover --buffer
 
 about:
