@@ -30,11 +30,9 @@ requirements:
 test:
   imports:
     - crystals
-  source_files:
-    - crystals/tests
   commands:
     - crystals --help
-    - python -m unittest discover --buffer
+    - python -m unittest crystals --buffer
 
 about:
   home: https://crystals.readthedocs.io
