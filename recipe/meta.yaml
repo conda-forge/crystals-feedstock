@@ -30,6 +30,8 @@ requirements:
 test:
   imports:
     - crystals
+  source_files:
+    - crystals/tests
   commands:
     - crystals --help
     - python -m unittest discover --buffer
