@@ -1,4 +1,4 @@
-{% set version = "1.2.1" %}
+{% set version = "1.2.2" %}
 
 package:
   name: crystals
@@ -7,11 +7,11 @@ package:
 source:
   fn: crystals-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/c/crystals/crystals-{{ version }}.tar.gz
-  sha256: b7f512c96505b250d2b0299b81b0a877f2474ca0a89f5562aaf37ffbd890f7ad
+  sha256: 23c05e1ace0890f27637426c1220169a42e5519016c59d4e09319d8ef8c986f6
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - crystals = crystals.__main__:main
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -23,7 +23,7 @@ requirements:
   run:
     - python >=3.6
     - numpy >=1.13, <2
-    - spglib >=1.14, <2
+    - spglib >=1.15, <2
     - pycifrw >=4.4.1, <5
     - requests >=2, <3
 
