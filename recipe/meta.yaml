@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - crystals = crystals.__main__:main
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -32,7 +32,12 @@ test:
     - crystals
   commands:
     - crystals --help
-    - python -m unittest crystals --buffer
+    # crystals does not use pytest to run tests, it uses unittest.
+    # However, the discovery of tests by unittest is lacking when packages are
+    # installed. Since pytest supports running unittest tests, we use it instead.
+    - pytest --pyargs crystals
+  requires:
+    - pytest
 
 about:
   home: https://crystals.readthedocs.io
