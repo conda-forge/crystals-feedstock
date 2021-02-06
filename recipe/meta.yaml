@@ -1,4 +1,4 @@
-{% set version = "1.2.2" %}
+{% set version = "1.3.0" %}
 
 package:
   name: crystals
@@ -7,7 +7,7 @@ package:
 source:
   fn: crystals-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/c/crystals/crystals-{{ version }}.tar.gz
-  sha256: 23c05e1ace0890f27637426c1220169a42e5519016c59d4e09319d8ef8c986f6
+  sha256: 9c2a44a5e013469c4bffa4e1853477fab1fe5d445ef1dcc4c11bb8d18a2fda25
 
 build:
   noarch: python
@@ -18,11 +18,11 @@ build:
 
 requirements:
   build:
-    - python >=3.6 # requires pathlib
+    - python >=3.7 # requires pathlib
     - pip
   run:
-    - python >=3.6
-    - numpy >=1.13, <2
+    - python >=3.7
+    - numpy >=1.17, <2
     - spglib >=1.15, <2
     - pycifrw >=4.4.1, <5
     - requests >=2, <3
@@ -32,12 +32,17 @@ test:
     - crystals
   commands:
     - crystals --help
-    - python -m unittest crystals --buffer
+    # crystals does not use pytest to run tests, it uses unittest.
+    # However, the discovery of tests by unittest is lacking when packages are
+    # installed. Since pytest supports running unittest tests, we use it instead.
+    - pytest --pyargs crystals
+  requires:
+    - pytest
 
 about:
   home: https://crystals.readthedocs.io
-  license: BSD 3-Clause
-  license_family: BSD
+  license: GPL-3.0-only
+  license_family: GPL3
   license_file: LICENSE
   summary: Data structures for crystallography
   description: |
