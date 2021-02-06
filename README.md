@@ -3,7 +3,7 @@ About crystals
 
 Home: https://crystals.readthedocs.io
 
-Package license: BSD 3-Clause
+Package license: GPL-3.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/crystals-feedstock/blob/master/LICENSE.txt)
 
