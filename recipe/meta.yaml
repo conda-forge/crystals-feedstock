@@ -1,4 +1,4 @@
-{% set version = "1.3.0" %}
+{% set version = "1.3.1" %}
 
 package:
   name: crystals
@@ -7,7 +7,7 @@ package:
 source:
   fn: crystals-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/c/crystals/crystals-{{ version }}.tar.gz
-  sha256: 9c2a44a5e013469c4bffa4e1853477fab1fe5d445ef1dcc4c11bb8d18a2fda25
+  sha256: 02532c0840f046a939df17a2dbdab740c6dd37d3782a1c682bff3b98c0f89888
 
 build:
   noarch: python
@@ -17,7 +17,7 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python >=3.7 # requires pathlib
     - pip
   run:
