@@ -1,4 +1,4 @@
-{% set version = "1.6.2" %}
+{% set version = "1.7.0" %}
 
 package:
   name: crystals
@@ -7,7 +7,7 @@ package:
 source:
   fn: crystals-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/c/crystals/crystals-{{ version }}.tar.gz
-  sha256: 0c5a95e56af35be8f1660128344a3160bce7faaca268213a9c835b667f10366a
+  sha256: 4185ae1f7a7babcb34446c4139d0b6c31a1872d0e84fbe9f00dcd1502a78d837
 
 build:
   noarch: python
