@@ -6,12 +6,12 @@ package:
 
 source:
   fn: crystals-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/c/crystals/crystals-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/c/crystals/crystals-{{ version }}.tar.gz
   sha256: 4185ae1f7a7babcb34446c4139d0b6c31a1872d0e84fbe9f00dcd1502a78d837
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - crystals = crystals.__main__:main
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -19,10 +19,10 @@ build:
 requirements:
   host:
     - setuptools
-    - python >=3.7 # requires pathlib
+    - python {{ python_min }}  # requires pathlib
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - numpy >=1.20, <3
     - spglib >=1.15, <3
     - pycifrw >=4.4.1, <5
@@ -39,6 +39,7 @@ test:
     - pytest --pyargs crystals
   requires:
     - pytest
+    - python {{ python_min }}
 
 about:
   home: https://crystals.readthedocs.io
